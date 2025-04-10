@@ -2,14 +2,27 @@ function notifyReception() {
   const notification = document.getElementById("notification");
   const errorNotification = document.getElementById("errorNotification");
 
-  // Reset animations
-  notification.classList.remove("hide");
-  notification.classList.add("show");
 
-  // Hide after 3.5s with fadeOut
+
+  // Show success notification with GSAP
+  gsap.killTweensOf(notification);
+  gsap.set(notification, { opacity: 0, y: "-20%" });
+  gsap.to(notification, {
+    duration: 0.6,
+    opacity: 1,
+    y: "-50%",
+    display: "flex",
+    ease: "power3.out",
+  });
+
+  // Hide after 3.5s
   setTimeout(() => {
-    notification.classList.remove("show");
-    notification.classList.add("hide");
+    gsap.to(notification, {
+      duration: 0.5,
+      opacity: 0,
+      y: "-60%",
+      ease: "power2.in",
+    });
   }, 3500);
 
   // Send EmailJS notification
@@ -23,16 +36,27 @@ function notifyReception() {
         console.log("Success:", response);
       },
       function (error) {
-        // Handle error with animation
-        errorNotification.classList.remove("hide");
-        errorNotification.classList.add("show");
+        console.log("Error:", error);
+
+        // Show error notification with GSAP
+        gsap.killTweensOf(errorNotification);
+        gsap.set(errorNotification, { opacity: 0, y: "-20%" });
+        gsap.to(errorNotification, {
+          duration: 0.6,
+          opacity: 1,
+          y: "-50%",
+          display: "flex",
+          ease: "power3.out",
+        });
 
         setTimeout(() => {
-          errorNotification.classList.remove("show");
-          errorNotification.classList.add("hide");
+          gsap.to(errorNotification, {
+            duration: 0.5,
+            opacity: 0,
+            y: "-60%",
+            ease: "power2.in",
+          });
         }, 3500);
-
-        console.log("Error:", error);
       }
     );
 }
