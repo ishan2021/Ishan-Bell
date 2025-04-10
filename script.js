@@ -1,5 +1,5 @@
 (function () {
-  emailjs.init("rXVp9lym5eA4ajpBH"); // Replace with your actual EmailJS User ID
+  emailjs.init("r87F37EBTB8BIXB16"); // Replace with your actual EmailJS User ID
 })();
 
 function notifyReception() {
@@ -12,7 +12,7 @@ function notifyReception() {
 
   emailjs
     //Replace with your user_service-ID and templateID
-    .send("service_q8xh8ra", "template_6c2763g", {
+    .send("service_n5uf9wr", "template_kw277jr", {
       visitor_name: "A guest",
       message: "Someone clicked the reception bell!",
     })
@@ -38,7 +38,7 @@ function notifyReception() {
 
         setTimeout(() => {
           gsap.to(notification, {
-            duration: 0.3,
+            duration: 1.5,
             opacity: 0,
             y: "-60%",
             ease: "power2.in",
