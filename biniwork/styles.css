@@ -241,34 +241,6 @@ main {
   color: #64748b;
 }
 
-/* Contact Section */
-.contact-section {
-  text-align: center;
-  padding: 60px 0;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.contact-section h2 {
-  font-size: 36px;
-  margin-bottom: 15px;
-  color: var(--dark-color);
-}
-
-.contact-section > p {
-  font-size: 18px;
-  color: #64748b;
-  margin-bottom: 40px;
-}
-
-.contact-form {
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  text-align: left;
-}
-
 /* Footer */
 footer {
   background-color: white;
@@ -280,87 +252,6 @@ footer {
 footer p {
   color: #64748b;
   font-size: 14px;
-}
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 200;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  overflow: auto;
-}
-
-.modal-content {
-  background-color: white;
-  margin: 10% auto;
-  padding: 30px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 600px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  animation: slideIn 0.3s ease;
-  max-height: 80vh;
-  overflow-y: auto;
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.close-button {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close-button:hover {
-  color: var(--dark-color);
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #cbd5e1;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.form-group textarea {
-  height: 100px;
-  resize: vertical;
-}
-
-.form-group small {
-  display: block;
-  margin-top: 5px;
-  color: #64748b;
-  font-size: 12px;
 }
 
 .btn-primary {

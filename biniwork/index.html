@@ -19,8 +19,10 @@
     <header>
       <div class="container">
         <div class="logo">
-          <i class="fas fa-bell"></i>
-          <h1>ReceptionCall</h1>
+          <img
+            src="https://superstayhotel.no/cdn/shop/files/Untitled_design_66.png?v=1702483788&width=450"
+            alt=""
+          />
         </div>
         <nav>
           <ul>
@@ -39,7 +41,11 @@
           <p>Press the button below to notify our receptionist</p>
 
           <div class="call-button-container">
-            <button id="callButton" class="call-button">
+            <button
+              id="callButton"
+              class="call-button"
+              onclick="notifyReception()"
+            >
               <i class="fas fa-bell"></i>
             </button>
             <p class="button-label">Press to Call</p>
@@ -115,137 +121,6 @@
         <p>&copy; 2025 ReceptionCall. All rights reserved.</p>
       </div>
     </footer>
-
-    <!-- Settings Modal -->
-    <div id="settingsModal" class="modal">
-      <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2>Notification Settings</h2>
-        <form id="settingsForm">
-          <div class="form-group">
-            <label for="recipientEmail">Recipient Email:</label>
-            <input
-              type="email"
-              id="recipientEmail"
-              placeholder="receptionist@example.com"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="notificationType">Notification Type:</label>
-            <select id="notificationType">
-              <option value="email">Email</option>
-              <option value="browser">Browser Notification</option>
-              <option value="both">Both</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="customMessage">Custom Message:</label>
-            <textarea
-              id="customMessage"
-              placeholder="Customer needs assistance at..."
-            ></textarea>
-          </div>
-          <div class="form-group">
-            <label for="emailServiceID">Email Service ID:</label>
-            <input
-              type="text"
-              id="emailServiceID"
-              placeholder="service_xxxxxxx"
-              required
-            />
-            <small>Get this from your EmailJS account</small>
-          </div>
-          <div class="form-group">
-            <label for="emailTemplateID">Email Template ID:</label>
-            <input
-              type="text"
-              id="emailTemplateID"
-              placeholder="template_xxxxxxx"
-              required
-            />
-            <small>Get this from your EmailJS account</small>
-          </div>
-          <div class="form-group">
-            <label for="emailUserID">Email User ID:</label>
-            <input
-              type="text"
-              id="emailUserID"
-              placeholder="user_xxxxxxx"
-              required
-            />
-            <small>Get this from your EmailJS account</small>
-          </div>
-          <button type="submit" class="btn-primary">Save Settings</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- Setup Guide Modal -->
-    <div id="setupGuideModal" class="modal">
-      <div class="modal-content">
-        <span class="close-button" id="closeGuideButton">&times;</span>
-        <h2>Setup Guide</h2>
-        <div class="setup-steps">
-          <div class="step">
-            <h3>Step 1: Create an EmailJS Account</h3>
-            <p>
-              Visit
-              <a href="https://www.emailjs.com/" target="_blank">EmailJS.com</a>
-              and create a free account.
-            </p>
-          </div>
-          <div class="step">
-            <h3>Step 2: Create an Email Service</h3>
-            <p>
-              Connect your email provider (Gmail, Outlook, etc.) to EmailJS.
-            </p>
-            <p>
-              Note the <strong>Service ID</strong> for your connected email
-              service.
-            </p>
-          </div>
-          <div class="step">
-            <h3>Step 3: Create an Email Template</h3>
-            <p>Create a new template with the following variables:</p>
-            <ul>
-              <li><code>{{message}}</code> - The notification message</li>
-              <li>
-                <code>{{timestamp}}</code> - When the notification was sent
-              </li>
-              <li>
-                <code>{{location}}</code> - Where the notification was sent from
-              </li>
-            </ul>
-            <p>
-              Note the <strong>Template ID</strong> for your created template.
-            </p>
-          </div>
-          <div class="step">
-            <h3>Step 4: Get Your User ID</h3>
-            <p>
-              Find your <strong>User ID</strong> in the EmailJS dashboard under
-              "Integration".
-            </p>
-          </div>
-          <div class="step">
-            <h3>Step 5: Enter Your IDs in Settings</h3>
-            <p>Enter all three IDs in the settings panel of this app.</p>
-          </div>
-        </div>
-        <button id="openSettingsButton" class="btn-primary">
-          Open Settings
-        </button>
-      </div>
-    </div>
-
-    <button id="settingsButton" class="settings-button">
-      <i class="fas fa-cog"></i>
-    </button>
-
-    <button id="setupGuideButton" class="guide-button">
-      <i class="fas fa-question"></i>
-    </button>
 
     <script src="script.js"></script>
   </body>
