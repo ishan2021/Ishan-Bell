@@ -11,6 +11,7 @@ function notifyReception() {
   bellSound.play();
 
   emailjs
+    //Replace with your user_service-ID and templateID
     .send("service_q8xh8ra", "template_6c2763g", {
       visitor_name: "A guest",
       message: "Someone clicked the reception bell!",
