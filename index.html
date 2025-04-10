@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reception Call Button</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- EmailJS SDK -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            src="https://superstayhotel.no/cdn/shop/files/Untitled_design_66.png?v=1702483788&width=450"
+            alt="Reception Call Logo"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="hero">
+          <h2>Need Assistance?</h2>
+          <h2>trenger hjelp?</h2>
+          <p>Press the button below to notify our receptionist</p>
+
+          <div class="call-button-container">
+            <button
+              id="callButton"
+              class="call-button"
+              onclick="notifyReception()"
+            >
+              <i class="fas fa-bell"></i>
+            </button>
+            <p class="button-label">Press to Call</p>
+          </div>
+
+          <div id="notification" class="notification hidden">
+            <i class="fas fa-check-circle"></i>
+            <p>Notification sent! Our receptionist will assist you shortly.</p>
+          </div>
+
+          <div id="errorNotification" class="notification error hidden">
+            <i class="fas fa-exclamation-circle"></i>
+            <p id="errorMessage">
+              There was an error sending your notification.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Super Stay Hotel. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
