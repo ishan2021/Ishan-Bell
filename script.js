@@ -28,7 +28,7 @@ function notifyReception() {
           boxShadow: "0 6px 15px rgba(16, 185, 129, 0.3)", // green shadow
         });
         gsap.to(notification, {
-          duration: 0.6,
+          duration: 0.4,
           opacity: 1,
           y: "-50%",
           display: "flex",
@@ -37,7 +37,7 @@ function notifyReception() {
 
         setTimeout(() => {
           gsap.to(notification, {
-            duration: 0.5,
+            duration: 0.3,
             opacity: 0,
             y: "-60%",
             ease: "power2.in",
@@ -56,7 +56,7 @@ function notifyReception() {
           boxShadow: "0 6px 15px #ff1d1d", // red shadow
         });
         gsap.to(errorNotification, {
-          duration: 0.6,
+          duration: 0.4,
           opacity: 1,
           y: "-50%",
           display: "flex",
@@ -65,7 +65,7 @@ function notifyReception() {
 
         setTimeout(() => {
           gsap.to(errorNotification, {
-            duration: 0.5,
+            duration: 0.3,
             opacity: 0,
             y: "-60%",
             ease: "power2.in",
