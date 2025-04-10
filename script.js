@@ -1,18 +1,18 @@
-(function () {
-  emailjs.init("rXVp9lym5eA4ajpBH"); // Replace with your User ID from EmailJS
-})();
-
 function notifyReception() {
-  // Displaying notification that message is being sent
   const notification = document.getElementById("notification");
-  notification.classList.remove("hidden");
+  const errorNotification = document.getElementById("errorNotification");
 
-  // Hide the notification after 3 seconds
-  setTimeout(function () {
-    notification.classList.add("hidden");
-  }, 3000);
+  // Reset animations
+  notification.classList.remove("hide");
+  notification.classList.add("show");
 
-  // Sending email using EmailJS
+  // Hide after 3.5s with fadeOut
+  setTimeout(() => {
+    notification.classList.remove("show");
+    notification.classList.add("hide");
+  }, 3500);
+
+  // Send EmailJS notification
   emailjs
     .send("service_q8xh8ra", "template_6c2763g", {
       visitor_name: "A guest",
@@ -23,11 +23,15 @@ function notifyReception() {
         console.log("Success:", response);
       },
       function (error) {
-        const errorNotification = document.getElementById("errorNotification");
-        errorNotification.classList.remove("hidden");
-        setTimeout(function () {
-          errorNotification.classList.add("hidden");
-        }, 3000);
+        // Handle error with animation
+        errorNotification.classList.remove("hide");
+        errorNotification.classList.add("show");
+
+        setTimeout(() => {
+          errorNotification.classList.remove("show");
+          errorNotification.classList.add("hide");
+        }, 3500);
+
         console.log("Error:", error);
       }
     );

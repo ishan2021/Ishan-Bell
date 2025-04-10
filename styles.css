@@ -1,28 +1,29 @@
 /* GOOGLE FONTS */
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Amarante&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 /* Global Styles */
 :root {
-  --primary-color: #3b82f6;
-  --secondary-color: #2563eb;
+  --primary-color: #ff4000;
+  --secondary-color: #fc5914;
   --accent-color: #f43f5e;
   --light-color: #f8fafc;
-  --dark-color: #1e293b;
+  --dark-color: #361f0d;
   --success-color: #10b981;
   --warning-color: #f59e0b;
-  --error-color: #ef4444;
+  --error-color: #ff1d1d;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "Amarante", sans-serif;
 }
 
 body {
   line-height: 1.6;
   color: var(--dark-color);
+  position: relative;
+  background-color: #f2f2f2;
 }
 
 .container {
@@ -47,8 +48,8 @@ ul {
 
 /* Header Styles */
 header {
-  background-color: white;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  /* background-color: white; */
+  border-bottom: 1px solid #c2c2c2a0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -59,32 +60,44 @@ header .container {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
+  background-color: #f2f2f2;
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo img {
-  width: 150px;
+  width: 280px;
   height: auto;
 }
 
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 60px 0;
+  padding: 30px 0;
   max-width: 800px;
   margin: 0 auto;
 }
 
 .hero h2 {
   font-size: 40px;
-  margin-bottom: 15px;
   color: var(--dark-color);
   font-weight: bold;
 }
 
+.heading2 {
+  margin-top: -20px;
+  margin-bottom: 15px;
+}
+
 .hero p {
-  font-size: 18px;
-  color: #64748b;
-  margin-bottom: 40px;
+  font-family: "Open Sans", verdana;
+  font-size: 16px;
+  color: #59626e;
 }
 
 /* Call Button */
@@ -92,17 +105,17 @@ header .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .call-button {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   background-color: var(--primary-color);
   border: none;
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2),
-    0 0 0 8px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 8px 20px #f68c3b33, 0 0 0 8px #f66a3b1a;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -118,33 +131,69 @@ header .container {
 
 .call-button:hover {
   transform: scale(1.1);
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3),
-    0 0 0 12px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 10px 25px #f6803b4d, 0 0 0 12px #f6ce3b26;
 }
 
 .call-button:active {
   transform: scale(0.95);
-  background-color: #2563eb;
+  background-color: var(--secondary-color);
 }
 
 .button-label {
+  margin-top: 20px;
   font-size: 20px;
   font-weight: 600;
   color: var(--dark-color);
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
 
-/* Notification */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+}
+
 .notification {
   background-color: var(--success-color);
   color: white;
-  padding: 15px 20px;
+  padding: 10px 20px;
   border-radius: 8px;
   display: flex;
   align-items: center;
-  max-width: 500px;
+  max-width: 430px;
   margin: 0 auto;
-  box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
-  animation: fadeIn 0.5s ease;
+  box-shadow: 0 6px 15px #10b9814d;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.notification.show {
+  animation: fadeIn 0.5s ease forwards;
+  pointer-events: all;
+}
+
+.notification.hide {
+  animation: fadeOut 0.5s ease forwards;
+  pointer-events: none;
 }
 
 .notification.error {
@@ -157,6 +206,10 @@ header .container {
   margin-right: 20px;
 }
 
+.notification p {
+  color: #fff;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -166,18 +219,6 @@ header .container {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Footer */
-footer {
-  background-color: white;
-  padding: 20px 0;
-  text-align: center;
-}
-
-footer p {
-  color: #64748b;
-  font-size: 14px;
 }
 
 @media (max-width: 768px) {
