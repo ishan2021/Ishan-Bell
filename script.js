@@ -38,7 +38,7 @@ function notifyReception() {
 
         setTimeout(() => {
           gsap.to(notification, {
-            duration: 3,
+            duration: 5,
             opacity: 0,
             y: "-60%",
             ease: "power2.in",
