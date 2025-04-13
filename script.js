@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("callButton").addEventListener("touchstart", notifyReception);
+});
+
 (function () {
   emailjs.init("r87F37EBTB8BIXB16"); // Replace with your actual EmailJS User ID
 })();
@@ -7,8 +11,6 @@ function notifyReception() {
   const notification = document.getElementById("notification");
   const errorNotification = document.getElementById("errorNotification");
 
-  // Play bell sound
-  bellSound.play();
 
   emailjs
     //Replace with your user_service-ID and templateID

@@ -28,8 +28,7 @@ body {
 }
 
 .container {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -49,7 +48,6 @@ ul {
 
 /* Header Styles */
 header {
-  /* background-color: white; */
   border-bottom: 1px solid #c2c2c2a0;
   position: sticky;
   top: 0;
@@ -146,6 +144,7 @@ header .container {
   font-weight: 600;
   color: var(--dark-color);
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -176,15 +175,17 @@ header .container {
   display: flex;
   align-items: center;
   max-width: 500px;
+  width: 90%;
   margin: 0 auto;
   box-shadow: 0 6px 15px #10b9814d;
-  position: absolute;
+  position: fixed; /* changed from absolute */
   top: 50%;
   left: 50%;
   justify-content: center;
   transform: translate(-50%, -50%);
   opacity: 0;
   pointer-events: none;
+  z-index: 9999;
 }
 
 .notification i {
