@@ -1,3 +1,5 @@
+/* COPYRIGHT 2025 SUPER STAY HOTEL */
+
 /* GOOGLE FONTS */
 @import url("https://fonts.googleapis.com/css2?family=Amarante&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
@@ -106,6 +108,8 @@ header .container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  text-align: center;
   margin-top: 40px;
 }
 
@@ -120,6 +124,7 @@ header .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
   transition: all 0.3s ease;
   margin-bottom: 15px;
 }
