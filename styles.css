@@ -102,43 +102,32 @@ header .container {
   color: #59626e;
 }
 
-/* Call Button */
-.call-button-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  text-align: center;
-  margin-top: 40px;
-}
-
 .call-button {
   width: 160px;
   height: 160px;
   border-radius: 50%;
   background-color: var(--primary-color);
   border: none;
-  box-shadow: 0 8px 20px #f68c3b33, 0 0 0 8px #f66a3b1a;
+  box-shadow: 0 8px 20px hsla(26, 91%, 60%, 0.2), 0 0 0 8px #f66a3b1a;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
-  margin-bottom: 15px;
   margin: 0 auto;
   flex-shrink: 0;
+  margin-bottom: 15px;
+  margin-top: 35px;
+  position: relative;
 }
 
 .call-button i {
   font-size: 70px;
   color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .call-button:hover {
